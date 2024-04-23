@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:object="${city}" th:action="@{/city/save}" method="post">
+    <input th:field="*{name}" required><br>
+    <select name="nation"><br>
+        <option th:each="item : ${nation}" th:text="${item.nameNation}" ></option>
+    </select><br>
+    <input th:field="*{acreage}" type="number" required><br>
+    <input th:field="*{population}" type="number" required><br>
+    <input th:field="*{gdp}" type="number" required><br>
+    <textarea th:field="*{description}" required></textarea><br>
+    <button>Confirm</button>
+</form>
+<form>
+    <a th:href="@{/city}">Exit</a>
+</form>
+</body>
+</html>

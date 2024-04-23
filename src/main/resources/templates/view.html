@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:object="${city}" method="get">
+    <input th:field="*{name}">
+    <input th:field="*{nation}">
+    <input th:field="*{acreage}">
+    <input th:field="*{population}">
+    <input th:field="*{gdp}">
+    <input th:field="*{description}">
+    <button><a th:href="@{'/city/edit/' + *{id}}">Edit</a></button>
+    <button><a th:href="@{'/city/delete/' + *{id}}">Delete</a></button>
+</form>
+<form>
+    <a th:href="@{/city}">Exit</a>
+</form>
+</body>
+</html>

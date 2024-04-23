@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #no{
+        padding-left: 50px;
+    }
+</style>
+<body>
+<p>Are you sure?</p>
+<form th:action="@{/city/Delete}" method="post">
+    <button>Yes</button>
+    <input type="hidden" th:value="${id}" name="id">
+</form>
+<form id="no">
+    <button ><a th:href="@{/city}">No</a></button>
+
+</form>
+</body>
+</html>
